@@ -11,12 +11,14 @@ set smartindent
 set relativenumber
 set ignorecase
 set smartcase
-
+set cmdheight=1
 
 execute pathogen#infect()
 let g:netrw_liststyle = 3
+let g:onedark_termcolors=256
 
 imap jj <Esc>
+
 inoremap {<CR> {<CR>}<Esc>ko<tab>
 inoremap [<CR> [<CR>]<Esc>ko<tab>
 inoremap (<CR> (<CR>)<Esc>ko<tab>
@@ -29,6 +31,7 @@ noremap <Right> <NOP>
 let g:javascript_plugin_jsdoc = 1
 
 let g:airline_powerline_fonts = 1
+let g:airline_theme='minimalist'
 
 filetype plugin indent on
 
