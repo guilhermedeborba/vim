@@ -1,6 +1,31 @@
-set t_Co=256
+" set the runtime path to include Vundle and initialize
+set rtp+=/home/guilhermeborba/.config/nvim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'joshdick/onedark.vim'
+
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+
+Plugin 'preservim/nerdtree'
+Plugin 'neoclide/coc.nvim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on    " required
+filetype off                 
 syntax on
-colorscheme atom-dark-256
+
+set nocompatible              
+set t_Co=256
+set guicursor=
+
+set background=dark
+colorscheme onedark 
 
 set tabstop=2 expandtab shiftwidth=2 smarttab
 set number
@@ -12,11 +37,6 @@ set relativenumber
 set ignorecase
 set smartcase
 set cmdheight=1
-
-execute pathogen#infect()
-let g:netrw_liststyle = 3
-let g:onedark_termcolors=256
-
 imap jj <Esc>
 
 inoremap {<CR> {<CR>}<Esc>ko<tab>
@@ -27,13 +47,3 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-let g:javascript_plugin_jsdoc = 1
-
-let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'
-
-filetype plugin indent on
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
